@@ -1,0 +1,44 @@
+<section class="portfolio-section">
+  <div class="portfolio-container">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-subtitle">
+      These projects highlight my skills in turning ideas and designs into working web applications.
+    </p>
+
+    <div class="portfolio-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="project-img">
+          <img [src]="project.img" [alt]="project.name" />
+          <div class="project-overlay">
+            <a [href]="project.link" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              View Project
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">{{ project.name }}</h3>
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let technology of project.tech">{{ technology }}</span>
+          </div>
+          <p class="project-desc">{{ project.description }}</p>
+          <a [href]="project.link" class="project-btn" target="_blank" rel="noopener noreferrer">
+            <span>Explore Project</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+

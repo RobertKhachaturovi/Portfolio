@@ -1,0 +1,34 @@
+<div class="modal-backdrop" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-button" (click)="closeModal()" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <div class="modal-header">
+            <div class="skill-icon-wrapper">
+                <img *ngIf="skill.img" [src]="skill.img" [alt]="skill.name" class="modal-skill-img" />
+                <i *ngIf="!skill.img" [class]="skill.icon + ' modal-skill-icon'"></i>
+            </div>
+            <h2 class="modal-title">{{skill.name}}</h2>
+        </div>
+
+        <div class="modal-body">
+            <div class="skill-level-badge" *ngIf="skill.level">
+                <span class="badge-label">Level</span>
+                <span class="badge-value">{{skill.level}}</span>
+            </div>
+            <p class="modal-description">{{skill.description}}</p>
+        </div>
+
+        <button class="modal-close-btn" (click)="closeModal()">
+            <span>Close</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+</div>
